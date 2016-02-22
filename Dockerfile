@@ -1,9 +1,8 @@
-FROM ubuntu:14.04
+FROM alpine:latest
 
 MAINTAINER Scott Coulton "https://github.com/scotty-c/docker-consul"
 
-RUN apt-get -qqy update
-RUN apt-get -qqy install curl unzip
+RUN apk add --update curl unzip && rm -rf /var/cache/apk/* 
 ADD https://releases.hashicorp.com/consul/0.6.3/consul_0.6.3_linux_amd64.zip /tmp/consul.zip
 RUN cd /usr/sbin && unzip /tmp/consul.zip && chmod +x /usr/sbin/consul && rm /tmp/consul.zip
 ADD https://releases.hashicorp.com/consul/0.6.3/consul_0.6.3_web_ui.zip /tmp/webui.zip
