@@ -10,7 +10,7 @@ RUN mkdir -p /usr/src/consul
 RUN cd /tmp/ && unzip webui.zip && mv index.html /usr/src/consul && mv static /usr/src/consul/ 
 ADD consul.json /config/
 
-EXPOSE 53/udp 8300 8301 8301/udp 8302 8302/udp 8400 8500 
+EXPOSE 53/udp 8300 8301 8301/udp 8302 8302/udp 8400 8500 8600 8600/udp
 
 VOLUME ["/data"]
 
