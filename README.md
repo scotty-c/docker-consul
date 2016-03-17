@@ -1,7 +1,7 @@
 #Consul
 scottyc/consul
 
-Consul in a Ubuntu 14.04 docker container.
+Consul in a Alpine Linux docker container.
 
 [`scottyc/consul`](https://registry.hub.docker.com/u/scottyc/consul/)
 
