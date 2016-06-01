@@ -3,9 +3,9 @@ FROM alpine:latest
 MAINTAINER Scott Coulton "https://github.com/scotty-c/docker-consul"
 
 RUN apk add --update curl unzip && rm -rf /var/cache/apk/* 
-ADD https://releases.hashicorp.com/consul/0.6.3/consul_0.6.3_linux_amd64.zip /tmp/consul.zip
+ADD https://releases.hashicorp.com/consul/0.6.4/consul_0.6.4_linux_amd64.zip /tmp/consul.zip
 RUN cd /usr/sbin && unzip /tmp/consul.zip && chmod +x /usr/sbin/consul && rm /tmp/consul.zip
-ADD https://releases.hashicorp.com/consul/0.6.3/consul_0.6.3_web_ui.zip /tmp/webui.zip
+ADD https://releases.hashicorp.com/consul/0.6.4/consul_0.6.4_web_ui.zip /tmp/webui.zip
 RUN mkdir -p /usr/src/consul 
 RUN cd /tmp/ && unzip webui.zip && mv index.html /usr/src/consul && mv static /usr/src/consul/ 
 ADD consul.json /config/
